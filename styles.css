@@ -183,20 +183,45 @@ a {
 
 .mobile-bar {
   display: none;
-  min-height: 58px;
-  justify-content: space-between;
+  height: 60px;
+  min-height: 60px;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
   padding: 0 16px;
   background: linear-gradient(135deg, var(--navy), var(--navy-dark));
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   color: #fff;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.mobile-bar [data-menu-toggle] {
+  justify-self: start;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 24px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
 }
 
 .mobile-brand {
+  justify-self: center;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  justify-content: center;
+  gap: 10px;
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.2px;
+  text-decoration: none;
 }
 
 .bottom-nav {
@@ -204,18 +229,13 @@ a {
 }
 
 .mobile-bar img {
-  width: 34px;
-  height: 34px;
-  padding: 3px;
+  width: 32px;
+  height: 32px;
+  padding: 2px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.mobile-avatar {
-  width: 36px;
-  height: 36px;
-  border-width: 2px;
-  font-size: 12px;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
 }
 
 .mobile-bar button,
@@ -2117,7 +2137,7 @@ button.teacher:hover {
   }
 
   .mobile-bar {
-    display: flex;
+    display: grid;
   }
 
   .shell {
