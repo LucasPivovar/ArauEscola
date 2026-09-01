@@ -107,18 +107,34 @@ a {
 }
 
 .side-brand {
-  gap: 10px;
-  margin: 0 10px 28px;
-  font-weight: 700;
+  gap: 14px;
+  margin: 0 4px 34px;
+  font-weight: 800;
 }
 
 .side-brand img {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
-.side-brand small,
+.side-brand span {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.2px;
+}
+
+.side-brand small {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 3px;
+  letter-spacing: normal;
+}
+
 .teacher small {
   display: block;
   font-size: 10px;
@@ -415,19 +431,31 @@ a {
 }
 
 .topbar {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  text-align: left;
 }
 
 .page-title h1 {
-  font-size: 34px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
 }
 
-.teacher {
-  gap: 14px;
-  color: var(--navy);
-  font-size: 13px;
-  font-weight: 700;
+.page-title p {
+  font-size: 14px;
+  color: #55708e;
+  margin: 4px 0 0;
+  font-weight: 600;
 }
 
 .avatar {
@@ -827,25 +855,13 @@ a {
 }
 
 .attendance-toolbar {
-  display: grid;
-  grid-template-columns: 180px 1fr 260px;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 28px;
-}
-
-.attendance-toolbar h1 {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.attendance-toolbar time {
   display: flex;
-  justify-content: center;
-  gap: 7px;
-  color: #0054aa;
-  font-weight: 700;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .mark-all {
@@ -2237,51 +2253,60 @@ button.teacher:hover {
 
   .topbar {
     position: relative;
-    min-height: 56px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
+    text-align: center;
+    gap: 12px;
+    padding: 14px 16px;
     margin: -16px -16px 16px;
-    padding-left: 16px;
-    padding-right: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar .page-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .topbar .page-title h1 {
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .topbar .page-title p {
+    font-size: 13px;
+    text-align: center;
+    margin: 4px 0 0;
+  }
+
+  .topbar > .btn,
+  .topbar > a.btn,
+  .topbar > button.btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .topbar .options-dropdown-wrap {
+    position: absolute;
+    right: 16px;
+    top: 14px;
   }
 
   .topbar-centered {
-    grid-template-columns: 44px 1fr 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
     margin: -16px -16px 16px;
-    padding: 12px 14px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--line);
   }
 
   .topbar .text-btn {
-    display: none;
-  }
-
-  .topbar .icon-btn {
-    position: absolute;
-    right: 16px;
-  }
-
-  .page-title h1 {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .page-title p {
-    text-align: center;
-  }
-
-  .page-title {
-    text-align: center;
-    width: 100%;
-  }
-
-  .topbar-centered .header-center-title,
-  .topbar-centered h1,
-  .topbar-centered h2 {
-    font-size: 18px;
+    display: none !important;
   }
 
   .class-card {
@@ -2322,19 +2347,36 @@ button.teacher:hover {
   }
 
   .attendance-toolbar {
-    grid-template-columns: 1fr;
-    margin-bottom: 16px;
-    min-height: 72px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 16px;
     background: #fff;
     color: var(--ink);
-    border-radius: 0 0 8px 8px;
+    border-radius: 0;
     margin-left: -16px;
     margin-right: -16px;
     margin-top: -16px;
-    padding: 16px 16px 12px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--line);
+  }
+
+  .attendance-toolbar .page-title {
+    width: 100%;
     text-align: center;
+  }
+
+  .attendance-toolbar .page-title h1 {
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .attendance-toolbar .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .table-wrap {

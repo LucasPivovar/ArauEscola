@@ -321,7 +321,6 @@ export default function Home() {
         {/* Card 3: Class Summary with Options Dropdown */}
         <section className="summary panel">
           <header className="topbar-centered" style={{ position: 'relative' }}>
-            <span className="back-btn cursor-pointer" onClick={() => showToast('Voltando')}><ChevronLeft size={18} /> Voltar</span>
             <h2 className="header-center-title">Turma 6º Ano A</h2>
             <div className="header-right-action options-dropdown-wrap">
               <button
@@ -392,7 +391,6 @@ export default function Home() {
         {/* Card 4: Attendance with Legend and Clickable Rows */}
         <section className="attendance panel">
           <header className="table-head">
-            <span className="cursor-pointer" onClick={() => showToast('Voltando')}><ChevronLeft size={18} /> Voltar</span>
             <div>
               <h2>Chamada — 6º Ano A</h2>
               <time>24/05/2024</time>
@@ -446,7 +444,6 @@ export default function Home() {
         {/* Card 5: History Panel */}
         <section className="history panel">
           <header className="table-head">
-            <span className="cursor-pointer"><ChevronLeft size={18} /></span>
             <h2>Histórico de Chamadas</h2>
             <Search size={19} />
           </header>
