@@ -88,25 +88,18 @@ a {
   flex-direction: column;
   background: linear-gradient(180deg, #073e86, #002a63);
   color: #fff;
-  padding: 26px 12px 20px;
-}
-
-.brand,
-.side-brand,
-.topbar,
-.teacher,
-.meta,
-.mobile-bar,
-.actions,
-.footer-brand,
-.student-row,
-.modal-title,
-.phone-row {
-  display: flex;
-  align-items: center;
+  padding: 26px 14px 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  z-index: 15;
 }
 
 .side-brand {
+  display: flex;
+  align-items: center;
   gap: 14px;
   margin: 0 4px 34px;
   font-weight: 800;
@@ -135,21 +128,15 @@ a {
   letter-spacing: normal;
 }
 
-.teacher small {
-  display: block;
-  font-size: 10px;
-  font-weight: 400;
-  opacity: 0.78;
-}
-
 .sidebar nav {
   display: grid;
-  gap: 8px;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
 .sidebar a,
 .sidebar button {
-  min-height: 52px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -160,19 +147,38 @@ a {
   color: #fff;
   font-size: 15px;
   text-align: left;
+  transition: all 0.15s ease;
 }
 
-.sidebar i {
-  width: 18px;
-  font-size: 18px;
+.sidebar a:hover,
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(2px);
 }
 
 .sidebar .active {
-  background: var(--blue);
+  background: var(--blue) !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 84, 170, 0.35);
 }
 
 .sidebar .logout {
   margin-top: auto;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffcccc;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}
+
+.sidebar .logout:hover {
+  background: rgba(239, 68, 68, 0.22);
+  color: #fff;
 }
 
 .mobile-bar {
