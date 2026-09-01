@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arau Escola - Chamada</title>
+    <link rel="icon" href="assets/arau-icon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    <header class="mobile-bar">
+      <button data-menu-toggle type="button" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+      <a class="mobile-brand" href="inicio.html"><img src="assets/arau-icon.svg" alt="" /><span>Arau Escola</span></a>
+      <button class="avatar-btn mobile-avatar" data-modal="#teacherModal" type="button" aria-label="Ver perfil do professor" title="Ver perfil do professor">LS</button>
+    </header>
+    <main class="page">
+      <div class="shell attendance-shell">
+        <aside class="sidebar">
+          <div class="side-brand"><img src="assets/arau-icon.svg" alt="" /><span>Arau Escola<small>Gestão escolar</small></span></div>
+          <nav>
+            <a href="inicio.html"><i class="bi bi-house-door-fill"></i>Início</a>
+            <a href="turmas.html"><i class="bi bi-gift-fill"></i>Minhas Turmas</a>
+            <a class="active" href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i>Chamada</a>
+            <a href="historico.html"><i class="bi bi-arrow-clockwise"></i>Histórico</a>
+            <a href="alunos.html"><i class="bi bi-people-fill"></i>Alunos</a>
+            <a href="relatorios.html"><i class="bi bi-bar-chart-fill"></i>Relatórios</a>
+            <a href="mensagens.html"><i class="bi bi-chat-left-text-fill"></i>Mensagens</a>
+            <a href="configuracoes.html"><i class="bi bi-gear-fill"></i>Configurações</a>
+          </nav>
+          <a class="logout" href="index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
+        </aside>
+        <section class="content">
+          <header class="attendance-toolbar">
+            <a class="text-btn" href="turma.html"><i class="bi bi-arrow-left"></i> Voltar</a>
+            <div>
+              <h1>Chamada — 6º Ano A</h1>
+              <time>24/05/2024 <i class="bi bi-calendar3"></i></time>
+            </div>
+            <button class="btn mark-all" id="markAll" type="button"><i class="bi bi-check-lg"></i> Marcar todos como presentes</button>
+          </header>
+
+          <!-- Barra de Legenda Explicativa -->
+          <div class="legend-bar">
+            <strong class="legend-title"><i class="bi bi-info-circle-fill" style="color: var(--blue);"></i> Legenda:</strong>
+            <span class="legend-item-chip"><span class="dot present">P</span> <b>P</b>resente</span>
+            <span class="legend-item-chip"><span class="dot absent">F</span> <b>F</b>alta (gera aviso WhatsApp)</span>
+            <span class="legend-item-chip"><span class="dot late">A</span> <b>A</b>traso</span>
+            <span class="legend-item-chip"><span class="dot excused">J</span> <b>J</b>ustificada</span>
+            <span class="legend-item-chip"><span class="dot note"><i class="bi bi-file-text" style="font-size: 8px;"></i></span> <b>Obs</b> Anotação pedagógica</span>
+          </div>
+
+          <div class="table-wrap" id="alunos">
+            <table class="attendance-table">
+              <thead>
+                <tr>
+                  <th style="width: 38px;">#</th>
+                  <th>Aluno</th>
+                  <th class="present-col" title="Presente">Presente (P)</th>
+                  <th class="absent-col" title="Falta">Falta (F)</th>
+                  <th class="late-col" title="Atraso">Atraso (A)</th>
+                  <th class="excused-col" title="Justificada">Justificada (J)</th>
+                  <th title="Observação">Observação</th>
+                  <th style="width: 44px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><span class="student-row" data-student-name="Ana Clara de Lima"><span class="avatar sm">AC</span>Ana Clara de Lima</span></td>
+                  <td><button class="radio present active" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused" title="Marcar como Justificada" type="button"></button></td>
+                  <td><button class="table-icon" data-modal="#noteModal" title="Adicionar observação" type="button"><i class="bi bi-file-earmark-text"></i></button></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><span class="student-row" data-student-name="Bruno Henrique Souza"><span class="avatar sm">BH</span>Bruno Henrique Souza</span></td>
+                  <td><button class="radio present" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent active" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused" title="Marcar como Justificada" type="button"></button></td>
+                  <td></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><span class="student-row" data-student-name="Carlos Eduardo Martins"><span class="avatar sm">CE</span>Carlos Eduardo Martins</span></td>
+                  <td><button class="radio present" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late active" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused" title="Marcar como Justificada" type="button"></button></td>
+                  <td></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><span class="student-row" data-student-name="Danielly Vitória Campos"><span class="avatar sm">DV</span>Danielly Vitória Campos</span></td>
+                  <td><button class="radio present" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused active" title="Marcar como Justificada" type="button"></button></td>
+                  <td><button class="table-icon" data-modal="#noteModal" title="Ver observação" type="button"><i class="bi bi-file-earmark-text"></i></button></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><span class="student-row" data-student-name="Eduardo Gabriel Pereira"><span class="avatar sm">EG</span>Eduardo Gabriel Pereira</span></td>
+                  <td><button class="radio present active" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused" title="Marcar como Justificada" type="button"></button></td>
+                  <td></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td><span class="student-row" data-student-name="Giovanna Ribeiro da Silva"><span class="avatar sm">GR</span>Giovanna Ribeiro da Silva</span></td>
+                  <td><button class="radio present active" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused" title="Marcar como Justificada" type="button"></button></td>
+                  <td></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td><span class="student-row" data-student-name="Isabela Cristina Moreira"><span class="avatar sm">IC</span>Isabela Cristina Moreira</span></td>
+                  <td><button class="radio present" title="Marcar como Presente" type="button"></button></td>
+                  <td><button class="radio absent" title="Marcar como Falta" type="button"></button></td>
+                  <td><button class="radio late" title="Marcar como Atraso" type="button"></button></td>
+                  <td><button class="radio excused" title="Marcar como Justificada" type="button"></button></td>
+                  <td></td>
+                  <td class="menu-cell">
+                    <button class="table-icon" data-row-menu type="button" aria-label="Ações do aluno"><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="row-menu">
+                      <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
+                      <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
+                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="actions" style="margin-top: 22px;">
+            <button class="btn primary" data-modal="#whatsappModal" type="button"><i class="bi bi-save2"></i> Salvar chamada</button>
+            <a class="btn secondary" href="turma.html">Cancelar</a>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação inferior">
+      <a href="inicio.html"><i class="bi bi-house-door-fill"></i><span>Início</span></a>
+      <a href="turmas.html"><i class="bi bi-grid-1x2-fill"></i><span>Turmas</span></a>
+      <a class="active" href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i><span>Chamada</span></a>
+      <a href="historico.html"><i class="bi bi-clock-history"></i><span>Histórico</span></a>
+      <a href="alunos.html"><i class="bi bi-people-fill"></i><span>Alunos</span></a>
+    </nav>
+
+    <!-- Modal de Detalhes do Aluno -->
+    <div class="modal-backdrop" id="studentModal">
+      <section class="modal-card">
+        <header class="modal-title">
+          <h2>Detalhes do Aluno</h2>
+          <button class="icon-btn" data-close-modal type="button" aria-label="Fechar modal"><i class="bi bi-x-lg"></i></button>
+        </header>
+        <div class="student-profile">
+          <span class="avatar lg">BH</span>
+          <div>
+            <h3>Bruno Henrique Souza</h3>
+            <p>Data de nascimento: 12/03/2012</p>
+            <p><strong>6º Ano A</strong> • Ensino Fundamental</p>
+          </div>
+        </div>
+        <article class="mini-card">
+          <h3>Responsável</h3>
+          <p>Maria de Fátima Souza (Mãe)</p>
+          <span class="phone-row"><i class="bi bi-telephone-fill"></i> (41) 98765-4321 <i class="bi bi-whatsapp"></i></span>
+        </article>
+        <article class="mini-card month-card">
+          <h3>Frequência no mês</h3>
+          <div class="donut"><strong>86%</strong><small>Presença</small></div>
+          <ul class="legend-list">
+            <li><i class="legend green"></i>Presentes <strong>19</strong></li>
+            <li><i class="legend red"></i>Faltas <strong>3</strong></li>
+            <li><i class="legend orange"></i>Atrasos <strong>2</strong></li>
+            <li><i class="legend purple"></i>Justificadas <strong>1</strong></li>
+            <li>Total de aulas: <strong>25</strong></li>
+          </ul>
+        </article>
+        <article class="mini-card absences">
+          <h3>Últimas ausências</h3>
+          <p>20/05/2024 <b>Falta</b></p>
+          <p>15/05/2024 <b>Falta</b></p>
+          <p>08/05/2024 <em>Atraso</em></p>
+        </article>
+        <article class="mini-card">
+          <h3>Observações Pedagógicas</h3>
+          <p>Aluno dedicado e participativo.</p>
+        </article>
+      </section>
+    </div>
+
+    <!-- Modal de Observação -->
+    <div class="modal-backdrop" id="noteModal">
+      <section class="modal-card">
+        <header class="modal-title">
+          <h2>Observação do Aluno</h2>
+          <button class="icon-btn" data-close-modal type="button" aria-label="Fechar modal"><i class="bi bi-x-lg"></i></button>
+        </header>
+        <form class="note-form">
+          <p>Aluno(a): <strong id="noteStudent">Bruno Henrique Souza</strong></p>
+          <textarea id="noteText" placeholder="Digite aqui anotações sobre participação, entrega de trabalhos ou justificativa de ausência..."></textarea>
+          <button class="btn primary" data-action="save-note" data-close-modal type="button"><i class="bi bi-check-lg"></i> Salvar observação</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Modal de Notificação WhatsApp -->
+    <div class="modal-backdrop whatsapp-modal" id="whatsappModal">
+      <section class="modal-card">
+        <div class="wa-icon"><i class="bi bi-whatsapp"></i></div>
+        <h2>Notificação WhatsApp</h2>
+        <p>Após salvar a chamada, o sistema enviará a notificação ao responsável do aluno faltante.</p>
+        <article class="message-card">
+          <p>Olá, Maria de Fátima!</p>
+          <p>Informamos a frequência de Bruno Henrique em <b>24/05</b>:</p>
+          <strong style="color: var(--red);">Falta Registrada</strong>
+          <p>Escola Municipal Professora Helena Kolody</p>
+          <p style="font-size: 11px; color: #5d718b;">Att. Secretaria Municipal de Educação - Araucária/PR</p>
+          <small>11:30 <i class="bi bi-check2-all"></i></small>
+        </article>
+        <button class="btn whatsapp-button" data-action="send-whatsapp" type="button"><i class="bi bi-whatsapp"></i> Enviar via WhatsApp</button>
+      </section>
+    </div>
+
+    <!-- Modal de Perfil do Professor -->
+    <div class="modal-backdrop" id="teacherModal">
+      <section class="modal-card teacher-modal-card">
+        <header class="modal-title">
+          <h2>Perfil do Professor</h2>
+          <button class="icon-btn" data-close-modal type="button" aria-label="Fechar modal"><i class="bi bi-x-lg"></i></button>
+        </header>
+
+        <div class="teacher-profile-header">
+          <div class="teacher-profile-avatar">LS</div>
+          <div class="teacher-profile-info">
+            <h3>Prof. Lucas Silva</h3>
+            <p class="teacher-subject"><i class="bi bi-book-fill"></i> Professor de Matemática</p>
+            <p class="teacher-meta"><i class="bi bi-card-text"></i> Matrícula: <strong>2024.0891-PR</strong></p>
+            <p class="teacher-meta"><i class="bi bi-building"></i> Secretaria Municipal de Educação de Araucária</p>
+          </div>
+        </div>
+
+        <div class="teacher-contact-card card">
+          <h4>Dados de Contato e Vínculo</h4>
+          <div class="teacher-contact-grid">
+            <div><span>E-mail institucional:</span><strong>lucas.silva@araucaria.pr.gov.br</strong></div>
+            <div><span>WhatsApp / Telefone:</span><strong>(41) 99123-4567</strong></div>
+            <div><span>Formação:</span><strong>Licenciatura em Matemática (UFPR)</strong></div>
+            <div><span>Carga horária:</span><strong>40h semanais (Regime Estatutário)</strong></div>
+          </div>
+        </div>
+
+        <div class="teacher-classes-section">
+          <h4><i class="bi bi-journal-bookmark-fill"></i> Turmas que Leciona (3)</h4>
+          <div class="teacher-classes-list">
+            <article class="teacher-class-item">
+              <div class="t-badge teal">6º A</div>
+              <div class="t-info">
+                <strong>6º Ano A — Ensino Fundamental</strong>
+                <p><i class="bi bi-geo-alt-fill"></i> Esc. Mun. Professora Helena Kolody</p>
+                <span class="t-meta"><i class="bi bi-clock"></i> Manhã (07:30 - 11:30) • <i class="bi bi-people"></i> 28 Alunos</span>
+              </div>
+              <a class="btn-sm" href="chamada.html">Chamada</a>
+            </article>
+
+            <article class="teacher-class-item">
+              <div class="t-badge blue">7º B</div>
+              <div class="t-info">
+                <strong>7º Ano B — Ensino Fundamental</strong>
+                <p><i class="bi bi-geo-alt-fill"></i> Esc. Mun. Professor Antônio dos Santos</p>
+                <span class="t-meta"><i class="bi bi-clock"></i> Tarde (13:00 - 17:00) • <i class="bi bi-people"></i> 26 Alunos</span>
+              </div>
+              <a class="btn-sm" href="turma.html">Resumo</a>
+            </article>
+
+            <article class="teacher-class-item">
+              <div class="t-badge teal">8º A</div>
+              <div class="t-info">
+                <strong>8º Ano A — Ensino Fundamental</strong>
+                <p><i class="bi bi-geo-alt-fill"></i> Esc. Mun. Tiradentes</p>
+                <span class="t-meta"><i class="bi bi-clock"></i> Manhã (07:30 - 11:30) • <i class="bi bi-people"></i> 27 Alunos</span>
+              </div>
+              <a class="btn-sm" href="turma.html">Resumo</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="teacher-stats-bar">
+          <div class="t-stat"><strong>81</strong><span>Total de Alunos</span></div>
+          <div class="t-stat"><strong>3</strong><span>Turmas</span></div>
+          <div class="t-stat ok"><strong>89%</strong><span>Frequência Média</span></div>
+          <div class="t-stat"><strong>48</strong><span>Aulas dadas/mês</span></div>
+        </div>
+
+        <div class="modal-actions" style="margin-top: 20px;">
+          <button class="btn secondary" data-action="edit-teacher-profile" type="button"><i class="bi bi-pencil-square"></i> Editar Dados</button>
+          <a class="btn danger" href="index.html"><i class="bi bi-box-arrow-left"></i> Sair do Sistema</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

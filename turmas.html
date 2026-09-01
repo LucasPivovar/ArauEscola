@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arau Escola - Minhas Turmas</title>
+    <link rel="icon" href="assets/arau-icon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    <header class="mobile-bar">
+      <button data-menu-toggle type="button" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+      <a class="mobile-brand" href="inicio.html"><img src="assets/arau-icon.svg" alt="" /><span>Arau Escola</span></a>
+      <button class="avatar-btn mobile-avatar" data-modal="#teacherModal" type="button" aria-label="Ver perfil do professor" title="Ver perfil do professor">LS</button>
+    </header>
+    <main class="page">
+      <div class="shell">
+        <aside class="sidebar">
+          <div class="side-brand"><img src="assets/arau-icon.svg" alt="" /><span>Arau Escola<small>Gestão escolar</small></span></div>
+          <nav>
+            <a href="inicio.html"><i class="bi bi-house-door-fill"></i>Início</a>
+            <a class="active" href="turmas.html"><i class="bi bi-gift-fill"></i>Minhas Turmas</a>
+            <a href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i>Chamada</a>
+            <a href="historico.html"><i class="bi bi-arrow-clockwise"></i>Histórico</a>
+            <a href="alunos.html"><i class="bi bi-people-fill"></i>Alunos</a>
+            <a href="relatorios.html"><i class="bi bi-bar-chart-fill"></i>Relatórios</a>
+            <a href="mensagens.html"><i class="bi bi-chat-left-text-fill"></i>Mensagens</a>
+            <a href="configuracoes.html"><i class="bi bi-gear-fill"></i>Configurações</a>
+          </nav>
+          <a class="logout" href="index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
+        </aside>
+        <section class="content">
+          <header class="topbar">
+            <div class="page-title">
+              <h1>Minhas Turmas</h1>
+            </div>
+          </header>
+          <div class="class-list">
+            <article class="class-card card">
+              <strong class="grade teal">6º A</strong>
+              <div>
+                <h2>6º Ano A</h2>
+                <p>Escola Municipal Professora Helena Kolody</p>
+                <div class="meta">
+                  <span><i class="bi bi-people"></i> 28 alunos</span>
+                  <span><i class="bi bi-mortarboard"></i> Ensino Fundamental</span>
+                  <span><i class="bi bi-clock"></i> Manhã (07:30 - 11:30)</span>
+                </div>
+              </div>
+              <a class="btn primary" href="chamada.html">Fazer chamada <i class="bi bi-chevron-right"></i></a>
+            </article>
+
+            <article class="class-card card">
+              <strong class="grade blue">7º B</strong>
+              <div>
+                <h2>7º Ano B</h2>
+                <p>Escola Municipal Professor Antônio dos Santos</p>
+                <div class="meta">
+                  <span><i class="bi bi-people"></i> 26 alunos</span>
+                  <span><i class="bi bi-mortarboard"></i> Ensino Fundamental</span>
+                  <span><i class="bi bi-clock"></i> Tarde (13:00 - 17:00)</span>
+                </div>
+              </div>
+              <a class="btn secondary" href="turma.html">Ver resumo <i class="bi bi-chevron-right"></i></a>
+            </article>
+
+            <article class="class-card card">
+              <strong class="grade teal">8º A</strong>
+              <div>
+                <h2>8º Ano A</h2>
+                <p>Escola Municipal Tiradentes</p>
+                <div class="meta">
+                  <span><i class="bi bi-people"></i> 27 alunos</span>
+                  <span><i class="bi bi-mortarboard"></i> Ensino Fundamental</span>
+                  <span><i class="bi bi-clock"></i> Manhã (07:30 - 11:30)</span>
+                </div>
+              </div>
+              <a class="btn secondary" href="turma.html">Ver resumo <i class="bi bi-chevron-right"></i></a>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação inferior">
+      <a href="inicio.html"><i class="bi bi-house-door-fill"></i><span>Início</span></a>
+      <a class="active" href="turmas.html"><i class="bi bi-grid-1x2-fill"></i><span>Turmas</span></a>
+      <a href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i><span>Chamada</span></a>
+      <a href="alunos.html"><i class="bi bi-people-fill"></i><span>Alunos</span></a>
+      <a href="relatorios.html"><i class="bi bi-bar-chart-fill"></i><span>Relatórios</span></a>
+    </nav>
+
+    <!-- Modal de Perfil do Professor -->
+    <div class="modal-backdrop" id="teacherModal">
+      <section class="modal-card teacher-modal-card">
+        <header class="modal-title">
+          <h2>Perfil do Professor</h2>
+          <button class="icon-btn" data-close-modal type="button" aria-label="Fechar modal"><i class="bi bi-x-lg"></i></button>
+        </header>
+
+        <div class="teacher-profile-header">
+          <div class="teacher-profile-avatar">LS</div>
+          <div class="teacher-profile-info">
+            <h3>Prof. Lucas Silva</h3>
+            <p class="teacher-subject"><i class="bi bi-book-fill"></i> Professor de Matemática</p>
+            <p class="teacher-meta"><i class="bi bi-card-text"></i> Matrícula: <strong>2024.0891-PR</strong></p>
+            <p class="teacher-meta"><i class="bi bi-building"></i> Secretaria Municipal de Educação de Araucária</p>
+          </div>
+        </div>
+
+        <div class="teacher-contact-card card">
+          <h4>Dados de Contato e Vínculo</h4>
+          <div class="teacher-contact-grid">
+            <div><span>E-mail institucional:</span><strong>lucas.silva@araucaria.pr.gov.br</strong></div>
+            <div><span>WhatsApp / Telefone:</span><strong>(41) 99123-4567</strong></div>
+            <div><span>Formação:</span><strong>Licenciatura em Matemática (UFPR)</strong></div>
+            <div><span>Carga horária:</span><strong>40h semanais (Regime Estatutário)</strong></div>
+          </div>
+        </div>
+
+        <div class="teacher-classes-section">
+          <h4><i class="bi bi-journal-bookmark-fill"></i> Turmas que Leciona (3)</h4>
+          <div class="teacher-classes-list">
+            <article class="teacher-class-item">
+              <div class="t-badge teal">6º A</div>
+              <div class="t-info">
+                <strong>6º Ano A — Ensino Fundamental</strong>
+                <p><i class="bi bi-geo-alt-fill"></i> Esc. Mun. Professora Helena Kolody</p>
+                <span class="t-meta"><i class="bi bi-clock"></i> Manhã (07:30 - 11:30) • <i class="bi bi-people"></i> 28 Alunos</span>
+              </div>
+              <a class="btn-sm" href="chamada.html">Chamada</a>
+            </article>
+
+            <article class="teacher-class-item">
+              <div class="t-badge blue">7º B</div>
+              <div class="t-info">
+                <strong>7º Ano B — Ensino Fundamental</strong>
+                <p><i class="bi bi-geo-alt-fill"></i> Esc. Mun. Professor Antônio dos Santos</p>
+                <span class="t-meta"><i class="bi bi-clock"></i> Tarde (13:00 - 17:00) • <i class="bi bi-people"></i> 26 Alunos</span>
+              </div>
+              <a class="btn-sm" href="turma.html">Resumo</a>
+            </article>
+
+            <article class="teacher-class-item">
+              <div class="t-badge teal">8º A</div>
+              <div class="t-info">
+                <strong>8º Ano A — Ensino Fundamental</strong>
+                <p><i class="bi bi-geo-alt-fill"></i> Esc. Mun. Tiradentes</p>
+                <span class="t-meta"><i class="bi bi-clock"></i> Manhã (07:30 - 11:30) • <i class="bi bi-people"></i> 27 Alunos</span>
+              </div>
+              <a class="btn-sm" href="turma.html">Resumo</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="teacher-stats-bar">
+          <div class="t-stat"><strong>81</strong><span>Total de Alunos</span></div>
+          <div class="t-stat"><strong>3</strong><span>Turmas</span></div>
+          <div class="t-stat ok"><strong>89%</strong><span>Frequência Média</span></div>
+          <div class="t-stat"><strong>48</strong><span>Aulas dadas/mês</span></div>
+        </div>
+
+        <div class="modal-actions" style="margin-top: 20px;">
+          <button class="btn secondary" data-action="edit-teacher-profile" type="button"><i class="bi bi-pencil-square"></i> Editar Dados</button>
+          <a class="btn danger" href="index.html"><i class="bi bi-box-arrow-left"></i> Sair do Sistema</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arau Escola - Login</title>
+    <link rel="icon" href="assets/arau-icon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page login-page">
+      <section class="login-card panel">
+        <div class="brand">
+          <img src="assets/arau-icon.svg" alt="" />
+          <div>
+            <strong>Arau Escola</strong>
+            <span>Gestão escolar e chamada</span>
+          </div>
+        </div>
+
+        <div class="login-heading">
+          <h1>Portal do Professor</h1>
+          <p>Faça login para acessar o sistema</p>
+        </div>
+
+        <form class="login-form">
+          <label class="field">
+            <i class="bi bi-person"></i>
+            <input placeholder="CPF ou e-mail" autocomplete="username" />
+          </label>
+          <label class="field">
+            <i class="bi bi-lock"></i>
+            <input id="password" placeholder="Senha" type="password" autocomplete="current-password" />
+            <button id="togglePassword" class="icon-btn" type="button" aria-label="Mostrar senha"><i class="bi bi-eye"></i></button>
+          </label>
+          <div class="login-row">
+            <label><input type="checkbox" /> Lembrar-me</label>
+            <button data-action="forgot-password" type="button">Esqueci minha senha</button>
+          </div>
+          <a class="btn primary" href="inicio.html">Entrar</a>
+        </form>
+
+        <div class="city-line" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

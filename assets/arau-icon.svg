@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Arau Escola">
+  <defs>
+    <linearGradient id="navy" x1="14" x2="63" y1="34" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06498f"/>
+      <stop offset="1" stop-color="#03265f"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="37" x2="65" y1="38" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#53c6df"/>
+      <stop offset="1" stop-color="#118ec2"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="92" x2="52" y1="34" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11b8ac"/>
+      <stop offset="1" stop-color="#007c78"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="20" r="7" fill="#f7b733"/>
+  <path d="M14 33c20 6 34 20 38 40v35C35 96 21 91 14 91V33Z" fill="url(#navy)"/>
+  <path d="M50 37c9 3 18 9 22 20v48c-8-9-16-14-22-16V37Z" fill="url(#cyan)"/>
+  <path d="M78 37c-9 3-18 9-22 20v48c8-9 16-14 22-16V37Z" fill="#0754b7"/>
+  <path d="M114 33c-20 6-34 20-38 40v35c17-12 31-17 38-17V33Z" fill="url(#teal)"/>
+  <path d="M14 91c18 0 35 8 50 24 15-16 32-24 50-24v11c-18 2-34 9-50 23-16-14-32-21-50-23V91Z" fill="#0b2d66"/>
+  <path d="M27 96c13 3 25 9 37 20 12-11 24-17 37-20" fill="none" stroke="#62d7e8" stroke-width="6" stroke-linecap="round"/>
+</svg>
