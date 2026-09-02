@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arau Escola - Recuperar Senha</title>
+    <link rel="icon" href="assets/arau-icon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page login-page">
+      <section class="login-card panel recover-card">
+        <div class="brand">
+          <img src="assets/arau-icon.svg" alt="" />
+          <div>
+            <strong>Arau Escola</strong>
+            <span>Gestão escolar e chamada</span>
+          </div>
+        </div>
+
+        <div class="login-heading">
+          <h1>Recuperar Senha</h1>
+          <p>Informe seu CPF ou e-mail institucional para receber as instruções de acesso.</p>
+        </div>
+
+        <form class="login-form">
+          <label class="field">
+            <i class="bi bi-person"></i>
+            <input placeholder="CPF ou e-mail" autocomplete="username" />
+          </label>
+          <button class="btn primary" data-action="recover-password" type="button"><i class="bi bi-send"></i> Enviar instruções</button>
+          <a class="btn secondary" href="index.html"><i class="bi bi-arrow-left"></i> Voltar ao login</a>
+        </form>
+
+        <article class="recover-info">
+          <i class="bi bi-shield-check"></i>
+          <div>
+            <strong>Segurança do acesso</strong>
+            <p>O link de recuperação é enviado apenas para o contato cadastrado pela escola.</p>
+          </div>
+        </article>
+
+        <div class="city-line" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

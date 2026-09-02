@@ -2,6 +2,40 @@
 // ARAU ESCOLA - GESTÃO ESCOLAR E CHAMADA
 // ==========================================
 
+(function redirectLegacyPagesToReact() {
+  if (document.querySelector('#root')) return;
+
+  const cleanPath = window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '').replace(/^\//, '');
+  const viewMap = {
+    inicio: 'inicio',
+    turmas: 'turmas',
+    turma: 'turmas',
+    chamada: 'chamada',
+    alunos: 'consulta',
+    historico: 'consulta',
+    relatorios: 'consulta',
+    configuracoes: 'configuracoes',
+  };
+
+  if (cleanPath === 'esqueci-senha') {
+    window.location.replace('/?auth=recover');
+    return;
+  }
+
+  const view = viewMap[cleanPath];
+  if (!view) return;
+
+  let role = 'professor';
+  try {
+    const params = new URLSearchParams(window.location.search);
+    role = params.get('perfil') || localStorage.getItem('arauRole') || role;
+  } catch (error) {
+    role = 'professor';
+  }
+
+  window.location.replace(`/?view=${view}&perfil=${role}`);
+})();
+
 const sidebarToggle = document.querySelector('[data-menu-toggle]');
 const sidebarBackdrop = document.querySelector('#sidebarBackdrop');
 const passwordInput = document.querySelector('#password');
@@ -15,6 +49,154 @@ const classOptionsBtn = document.querySelector('#classOptionsBtn');
 const classDropdownMenu = document.querySelector('#classDropdownMenu');
 const studentSearchInput = document.querySelector('#studentSearchInput');
 const filterChips = document.querySelectorAll('.filter-chip');
+const profileSelect = document.querySelector('#profileSelect');
+const loginButton = document.querySelector('#loginButton');
+const loginForm = document.querySelector('#loginForm');
+const loginIdentifier = document.querySelector('#loginIdentifier');
+const authError = document.querySelector('[data-auth-error]');
+const roleSwitchers = document.querySelectorAll('[data-role-switcher]');
+
+const roleInfo = {
+  diretor: { label: 'Diretor', name: 'Diretor Marcos Almeida', initials: 'DA', welcome: 'Visão geral da escola' },
+  secretaria: { label: 'Secretaria', name: 'Secretaria Ana Costa', initials: 'SA', welcome: 'Gestão operacional da escola' },
+  professor: { label: 'Professor', name: 'Professor Lucas Silva', initials: 'LS', welcome: 'Rotina de chamada das suas turmas' },
+  operador: { label: 'Operador / Substituto', name: 'Operador Rafael Lima', initials: 'OP', welcome: 'Chamada das turmas autorizadas' },
+};
+
+function getCurrentRole() {
+  const params = new URLSearchParams(window.location.search);
+  const fromUrl = params.get('perfil');
+  if (fromUrl && roleInfo[fromUrl]) {
+    localStorage.setItem('arauRole', fromUrl);
+    return fromUrl;
+  }
+  return localStorage.getItem('arauRole') || 'professor';
+}
+
+function isPublicPage() {
+  const page = window.location.pathname.replace(/\/$/, '') || '/';
+  return ['/', '/index', '/index.html', '/esqueci-senha', '/esqueci-senha.html'].includes(page);
+}
+
+function ensureAuth() {
+  if (isPublicPage()) return true;
+  if (localStorage.getItem('arauAuthenticated') === 'true') return true;
+
+  sessionStorage.setItem('arauRedirectAfterLogin', `${window.location.pathname}${window.location.search}`);
+  window.location.href = 'index.html';
+  return false;
+}
+
+function applyRoleView() {
+  const role = getCurrentRole();
+  const info = roleInfo[role];
+  document.body.dataset.role = role;
+
+  roleSwitchers.forEach((switcher) => {
+    switcher.value = role;
+  });
+
+  document.querySelectorAll('[data-role-label]').forEach((item) => {
+    item.textContent = info.label;
+  });
+
+  document.querySelectorAll('[data-role-name]').forEach((item) => {
+    item.textContent = info.name;
+  });
+
+  document.querySelectorAll('.teacher-modal-card .modal-title h2').forEach((item) => {
+    item.textContent = `Perfil de ${info.label}`;
+  });
+
+  document.querySelectorAll('.teacher-profile-info h3').forEach((item) => {
+    item.textContent = info.name;
+  });
+
+  document.querySelectorAll('.teacher-subject').forEach((item) => {
+    item.innerHTML = `<i class="bi bi-person-badge-fill"></i> ${info.label}`;
+  });
+
+  document.querySelectorAll('[data-role-welcome]').forEach((item) => {
+    item.textContent = info.welcome;
+  });
+
+  document.querySelectorAll('[data-role-initials]').forEach((item) => {
+    item.textContent = info.initials;
+    item.setAttribute('aria-label', `Ver perfil: ${info.label}`);
+  });
+
+  document.querySelectorAll('[data-visible-to]').forEach((item) => {
+    const allowed = item.dataset.visibleTo.split(',').map((value) => value.trim());
+    item.hidden = !allowed.includes(role);
+  });
+}
+
+function updateLoginHref() {
+  const role = profileSelect?.value || 'professor';
+  localStorage.setItem('arauRole', role);
+  if (loginButton) loginButton.dataset.target = `inicio.html?perfil=${role}`;
+}
+
+function getLoginTarget(role) {
+  const storedTarget = sessionStorage.getItem('arauRedirectAfterLogin');
+  if (!storedTarget || storedTarget.includes('index') || storedTarget.includes('esqueci-senha')) {
+    return `inicio.html?perfil=${role}`;
+  }
+
+  const target = new URL(storedTarget, window.location.origin);
+  target.searchParams.set('perfil', role);
+  return `${target.pathname}${target.search}`;
+}
+
+function setAuthenticatedSession(role) {
+  localStorage.setItem('arauRole', role);
+  localStorage.setItem('arauAuthenticated', 'true');
+  localStorage.setItem('arauUser', loginIdentifier?.value.trim() || roleInfo[role].name);
+}
+
+ensureAuth();
+
+profileSelect?.addEventListener('change', updateLoginHref);
+loginForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const role = profileSelect?.value || 'professor';
+
+  if (!loginIdentifier?.value.trim() || !passwordInput?.value.trim()) {
+    authError.hidden = false;
+    loginForm.reportValidity();
+    return;
+  }
+
+  authError.hidden = true;
+  setAuthenticatedSession(role);
+  window.location.href = getLoginTarget(role);
+});
+
+roleSwitchers.forEach((switcher) => {
+  switcher.addEventListener('change', () => {
+    const role = switcher.value;
+    localStorage.setItem('arauRole', role);
+    const url = new URL(window.location.href);
+    url.searchParams.set('perfil', role);
+    window.history.replaceState({}, '', url);
+    applyRoleView();
+    notify(`Perfil alterado para ${roleInfo[role].label}.`);
+  });
+});
+
+document.querySelectorAll('.logout').forEach((link) => {
+  link.addEventListener('click', () => {
+    localStorage.removeItem('arauAuthenticated');
+    localStorage.removeItem('arauUser');
+    sessionStorage.removeItem('arauRedirectAfterLogin');
+  });
+});
+
+if (profileSelect) {
+  profileSelect.value = getCurrentRole();
+  updateLoginHref();
+}
+applyRoleView();
 
 // Directory for rich student details
 const studentDirectory = {
@@ -285,7 +467,11 @@ function runAction(button) {
   const action = button.dataset.action;
 
   if (action === 'forgot-password') {
-    notify('Link de recuperação enviado para o e-mail cadastrado.');
+    window.location.href = 'esqueci-senha.html';
+  }
+
+  if (action === 'recover-password') {
+    notify('Instruções de recuperação enviadas para o contato cadastrado.');
   }
 
   if (action === 'edit-class') {
@@ -317,11 +503,15 @@ function runAction(button) {
   }
 
   if (action === 'save-settings') {
-    notify('Configurações do professor salvas com sucesso.');
+    notify('Configurações do perfil salvas com sucesso.');
   }
 
   if (action === 'save-note') {
     notify('Observação pedagógica registrada para o aluno.');
+  }
+
+  if (action === 'save-attendance') {
+    notify('Chamada salva com sucesso.');
   }
 
   if (action === 'send-whatsapp') {

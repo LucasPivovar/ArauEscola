@@ -13,7 +13,7 @@
     <header class="mobile-bar">
       <button data-menu-toggle type="button" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
       <a class="mobile-brand" href="inicio.html"><img src="assets/arau-icon.svg" alt="" /><span>Arau Escola</span></a>
-      <button class="avatar-btn mobile-avatar" data-modal="#teacherModal" type="button" aria-label="Ver perfil do professor" title="Ver perfil do professor">LS</button>
+      <button class="avatar-btn mobile-avatar" data-modal="#teacherModal" data-role-initials type="button" aria-label="Ver perfil" title="Ver perfil">LS</button>
     </header>
     <main class="page">
       <div class="shell attendance-shell">
@@ -23,12 +23,18 @@
             <a href="inicio.html"><i class="bi bi-house-door-fill"></i>Início</a>
             <a href="turmas.html"><i class="bi bi-gift-fill"></i>Minhas Turmas</a>
             <a class="active" href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i>Chamada</a>
-            <a href="historico.html"><i class="bi bi-arrow-clockwise"></i>Histórico</a>
-            <a href="alunos.html"><i class="bi bi-people-fill"></i>Alunos</a>
-            <a href="relatorios.html"><i class="bi bi-bar-chart-fill"></i>Relatórios</a>
-            <a href="mensagens.html"><i class="bi bi-chat-left-text-fill"></i>Mensagens</a>
+            <a href="alunos.html"><i class="bi bi-people-fill"></i>Consulta</a>
             <a href="configuracoes.html"><i class="bi bi-gear-fill"></i>Configurações</a>
           </nav>
+          <label class="sidebar-role">
+            <span>Perfil</span>
+            <select data-role-switcher aria-label="Selecionar perfil">
+              <option value="professor">Professor</option>
+              <option value="operador">Operador / Substituto</option>
+              <option value="secretaria">Secretaria</option>
+              <option value="diretor">Diretor</option>
+            </select>
+          </label>
           <a class="logout" href="index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
         </aside>
         <section class="content">
@@ -44,7 +50,7 @@
           <div class="legend-bar">
             <strong class="legend-title"><i class="bi bi-info-circle-fill" style="color: var(--blue);"></i> Legenda:</strong>
             <span class="legend-item-chip"><span class="dot present">P</span> <b>P</b>resente</span>
-            <span class="legend-item-chip"><span class="dot absent">F</span> <b>F</b>alta (gera aviso WhatsApp)</span>
+            <span class="legend-item-chip"><span class="dot absent">F</span> <b>F</b>alta</span>
             <span class="legend-item-chip"><span class="dot late">A</span> <b>A</b>traso</span>
             <span class="legend-item-chip"><span class="dot excused">J</span> <b>J</b>ustificada</span>
             <span class="legend-item-chip"><span class="dot note"><i class="bi bi-file-text" style="font-size: 8px;"></i></span> <b>Obs</b> Anotação pedagógica</span>
@@ -78,7 +84,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -95,7 +100,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -112,7 +116,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -129,7 +132,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -146,7 +148,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -163,7 +164,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -180,7 +180,6 @@
                     <div class="row-menu">
                       <button data-modal="#noteModal" type="button"><i class="bi bi-pencil-square"></i>Colocar observação</button>
                       <button data-modal="#studentModal" type="button"><i class="bi bi-person-vcard"></i>Detalhes do aluno</button>
-                      <button data-modal="#whatsappModal" type="button"><i class="bi bi-whatsapp"></i>Notificar responsável</button>
                     </div>
                   </td>
                 </tr>
@@ -189,7 +188,7 @@
           </div>
 
           <footer class="actions" style="margin-top: 22px;">
-            <button class="btn primary" data-modal="#whatsappModal" type="button"><i class="bi bi-save2"></i> Salvar chamada</button>
+            <button class="btn primary" data-action="save-attendance" type="button"><i class="bi bi-save2"></i> Salvar chamada</button>
             <a class="btn secondary" href="turma.html">Cancelar</a>
           </footer>
         </section>
@@ -200,8 +199,8 @@
       <a href="inicio.html"><i class="bi bi-house-door-fill"></i><span>Início</span></a>
       <a href="turmas.html"><i class="bi bi-grid-1x2-fill"></i><span>Turmas</span></a>
       <a class="active" href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i><span>Chamada</span></a>
-      <a href="historico.html"><i class="bi bi-clock-history"></i><span>Histórico</span></a>
-      <a href="alunos.html"><i class="bi bi-people-fill"></i><span>Alunos</span></a>
+      <a href="alunos.html"><i class="bi bi-people-fill"></i><span>Consulta</span></a>
+      <a href="configuracoes.html"><i class="bi bi-gear-fill"></i><span>Ajustes</span></a>
     </nav>
 
     <!-- Modal de Detalhes do Aluno -->
@@ -260,24 +259,6 @@
           <textarea id="noteText" placeholder="Digite aqui anotações sobre participação, entrega de trabalhos ou justificativa de ausência..."></textarea>
           <button class="btn primary" data-action="save-note" data-close-modal type="button"><i class="bi bi-check-lg"></i> Salvar observação</button>
         </form>
-      </section>
-    </div>
-
-    <!-- Modal de Notificação WhatsApp -->
-    <div class="modal-backdrop whatsapp-modal" id="whatsappModal">
-      <section class="modal-card">
-        <div class="wa-icon"><i class="bi bi-whatsapp"></i></div>
-        <h2>Notificação WhatsApp</h2>
-        <p>Após salvar a chamada, o sistema enviará a notificação ao responsável do aluno faltante.</p>
-        <article class="message-card">
-          <p>Olá, Maria de Fátima!</p>
-          <p>Informamos a frequência de Bruno Henrique em <b>24/05</b>:</p>
-          <strong style="color: var(--red);">Falta Registrada</strong>
-          <p>Escola Municipal Professora Helena Kolody</p>
-          <p style="font-size: 11px; color: #5d718b;">Att. Secretaria Municipal de Educação - Araucária/PR</p>
-          <small>11:30 <i class="bi bi-check2-all"></i></small>
-        </article>
-        <button class="btn whatsapp-button" data-action="send-whatsapp" type="button"><i class="bi bi-whatsapp"></i> Enviar via WhatsApp</button>
       </section>
     </div>
 

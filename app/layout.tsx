@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Arau Escola - Portal do Professor',
-  description: 'Interface responsiva para gestão escolar e chamada.',
+  title: 'Arau Escola - Plataforma',
+  description: 'Plataforma única para frequência escolar com permissões por perfil.',
 };
 
 export default function RootLayout({

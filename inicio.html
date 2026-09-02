@@ -13,7 +13,7 @@
     <header class="mobile-bar">
       <button data-menu-toggle type="button" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
       <a class="mobile-brand" href="inicio.html"><img src="assets/arau-icon.svg" alt="" /><span>Arau Escola</span></a>
-      <button class="avatar-btn mobile-avatar" data-modal="#teacherModal" type="button" aria-label="Ver perfil do professor" title="Ver perfil do professor">LS</button>
+      <button class="avatar-btn mobile-avatar" data-modal="#teacherModal" data-role-initials type="button" aria-label="Ver perfil" title="Ver perfil">LS</button>
     </header>
     <main class="page">
       <div class="shell">
@@ -23,19 +23,25 @@
             <a class="active" href="inicio.html"><i class="bi bi-house-door-fill"></i>Início</a>
             <a href="turmas.html"><i class="bi bi-gift-fill"></i>Minhas Turmas</a>
             <a href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i>Chamada</a>
-            <a href="historico.html"><i class="bi bi-arrow-clockwise"></i>Histórico</a>
-            <a href="alunos.html"><i class="bi bi-people-fill"></i>Alunos</a>
-            <a href="relatorios.html"><i class="bi bi-bar-chart-fill"></i>Relatórios</a>
-            <a href="mensagens.html"><i class="bi bi-chat-left-text-fill"></i>Mensagens</a>
+            <a href="alunos.html"><i class="bi bi-people-fill"></i>Consulta</a>
             <a href="configuracoes.html"><i class="bi bi-gear-fill"></i>Configurações</a>
           </nav>
+          <label class="sidebar-role">
+            <span>Perfil</span>
+            <select data-role-switcher aria-label="Selecionar perfil">
+              <option value="professor">Professor</option>
+              <option value="operador">Operador / Substituto</option>
+              <option value="secretaria">Secretaria</option>
+              <option value="diretor">Diretor</option>
+            </select>
+          </label>
           <a class="logout" href="index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
         </aside>
         <section class="content">
           <header class="topbar">
             <div class="page-title">
               <h1>Início</h1>
-              <p>Bem-vindo(a), Professor(a) Lucas Silva!</p>
+              <p>Bem-vindo(a), <span data-role-name>Professor Lucas Silva</span> — <span data-role-welcome>Rotina de chamada das suas turmas</span>.</p>
             </div>
           </header>
 
@@ -43,13 +49,40 @@
           <div class="welcome-banner card">
             <div class="welcome-text">
               <div class="badge-date"><i class="bi bi-calendar3"></i> Sexta-feira, 24 de Maio de 2024</div>
-              <h2>Painel Pedagógico do Professor</h2>
-              <p>Você tem <strong>3 turmas</strong> atribuídas no município de Araucária. Realize a chamada do 6º Ano A e acompanhe os indicadores de frequência.</p>
+              <h2>Painel Arau Escola — <span data-role-label>Professor</span></h2>
+              <p data-visible-to="professor,operador">Você tem <strong>3 turmas</strong> autorizadas no município de Araucária. Realize a chamada do 6º Ano A e acompanhe a frequência das turmas vinculadas.</p>
+              <p data-visible-to="diretor,secretaria">Acompanhe indicadores gerais de frequência, turmas, alunos e usuários autorizados em uma única plataforma.</p>
             </div>
             <div class="welcome-quick-actions">
               <a class="btn primary" href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i> Fazer Chamada</a>
               <a class="btn secondary" href="turmas.html"><i class="bi bi-grid-fill"></i> Minhas Turmas</a>
             </div>
+          </div>
+
+          <div class="admin-dashboard" data-visible-to="diretor,secretaria">
+            <article class="admin-panel">
+              <div class="section-title-row">
+                <h2><i class="bi bi-speedometer2" style="color: var(--blue);"></i> Dashboard de Frequência</h2>
+                <a class="text-link" href="alunos.html">Abrir consulta <i class="bi bi-chevron-right"></i></a>
+              </div>
+              <div class="admin-metric-grid">
+                <span><strong>92%</strong>Presença geral</span>
+                <span><strong>12</strong>Turmas ativas</span>
+                <span><strong>348</strong>Alunos acompanhados</span>
+                <span><strong>18</strong>Alunos em atenção</span>
+              </div>
+            </article>
+            <article class="admin-panel">
+              <div class="section-title-row">
+                <h2><i class="bi bi-sliders" style="color: var(--teal);"></i> Gestão por Permissão</h2>
+              </div>
+              <div class="permission-stack">
+                <span data-visible-to="diretor"><i class="bi bi-person-gear"></i> Gerenciar usuários da Secretaria</span>
+                <span><i class="bi bi-mortarboard"></i> Vincular professores às turmas</span>
+                <span><i class="bi bi-person-plus"></i> Cadastrar operadores/substitutos</span>
+                <span><i class="bi bi-graph-up"></i> Acompanhar frequência por turma, período ou aluno</span>
+              </div>
+            </article>
           </div>
 
           <!-- Métricas Resumidas -->
@@ -70,14 +103,14 @@
               <span>Chamada pendente</span>
             </article>
             <article class="kpi-card bad">
-              <i class="bi bi-whatsapp"></i>
-              <strong>3</strong>
-              <span>Avisos WhatsApp</span>
+              <i class="bi bi-person-x-fill"></i>
+              <strong>11</strong>
+              <span>Faltas no mês</span>
             </article>
           </div>
 
-          <!-- Agenda do Dia e Avisos Recentes -->
-          <div class="home-grid" style="margin-top: 24px;">
+          <!-- Agenda do Dia -->
+          <div class="home-grid home-grid-single" style="margin-top: 24px;">
             <div class="home-column">
               <div class="section-title-row">
                 <h2><i class="bi bi-clock-fill" style="color: var(--blue);"></i> Aulas de Hoje</h2>
@@ -121,39 +154,6 @@
                 </article>
               </div>
             </div>
-
-            <div class="home-column">
-              <div class="section-title-row">
-                <h2><i class="bi bi-bell-fill" style="color: var(--orange);"></i> Avisos Recentes</h2>
-                <a class="text-link" href="mensagens.html">Ver mensagens <i class="bi bi-chevron-right"></i></a>
-              </div>
-              <div class="card feed-card">
-                <div class="feed-item">
-                  <div class="feed-icon whatsapp"><i class="bi bi-whatsapp"></i></div>
-                  <div class="feed-body">
-                    <strong>Notificação de Falta Enviada</strong>
-                    <p>Mensagem enviada para Maria de Fátima Souza (mãe de Bruno Henrique Souza - 6º A).</p>
-                    <time>Hoje, 11:30</time>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="feed-icon official"><i class="bi bi-shield-check"></i></div>
-                  <div class="feed-body">
-                    <strong>Secretaria Municipal de Educação</strong>
-                    <p>Reunião pedagógica de alinhamento bimestral marcada para a próxima quarta-feira.</p>
-                    <time>Ontem, 16:45</time>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="feed-icon alert"><i class="bi bi-graph-up-arrow"></i></div>
-                  <div class="feed-body">
-                    <strong>Relatório de Frequência</strong>
-                    <p>A taxa média do 6º Ano A está em 89%, acima da meta municipal de 85%.</p>
-                    <time>22/05/2024</time>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </div>
@@ -163,8 +163,8 @@
       <a class="active" href="inicio.html"><i class="bi bi-house-door-fill"></i><span>Início</span></a>
       <a href="turmas.html"><i class="bi bi-grid-1x2-fill"></i><span>Turmas</span></a>
       <a href="chamada.html"><i class="bi bi-clipboard2-check-fill"></i><span>Chamada</span></a>
-      <a href="alunos.html"><i class="bi bi-people-fill"></i><span>Alunos</span></a>
-      <a href="relatorios.html"><i class="bi bi-bar-chart-fill"></i><span>Relatórios</span></a>
+      <a href="alunos.html"><i class="bi bi-people-fill"></i><span>Consulta</span></a>
+      <a href="configuracoes.html"><i class="bi bi-gear-fill"></i><span>Ajustes</span></a>
     </nav>
 
     <!-- Modal de Perfil do Professor -->
