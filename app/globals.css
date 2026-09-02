@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import "../src/styles.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -1130,3 +1129,6 @@
     font-size: 23px;
   }
 }
+
+@import "../src/styles.css";
+

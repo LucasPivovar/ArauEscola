@@ -45,11 +45,14 @@ function getInitialView(): ViewId {
   return routeMap[pathKey] ?? 'inicio';
 }
 
-function getInitialAuth() {
-  if (typeof window === 'undefined') return 'login';
+function getInitialAuth(): 'login' | 'recover' | 'app' {
+  if (typeof window === 'undefined') return 'app';
   const params = new URLSearchParams(window.location.search);
   if (params.get('auth') === 'recover' || window.location.pathname.includes('esqueci-senha')) return 'recover';
-  return localStorage.getItem('arauAuthenticated') === 'true' ? 'app' : 'login';
+  if (params.get('auth') === 'login') return 'login';
+  const stored = localStorage.getItem('arauAuthenticated');
+  if (stored === 'false') return 'login';
+  return 'app';
 }
 
 function updateAddress(view: ViewId, role: RoleId) {
@@ -270,7 +273,7 @@ export default function App() {
         role={role}
         toast={toast}
         onLogout={() => {
-          localStorage.removeItem('arauAuthenticated');
+          localStorage.setItem('arauAuthenticated', 'false');
           setAuthView('login');
           window.history.pushState(null, '', '/');
         }}
