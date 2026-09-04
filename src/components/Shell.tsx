@@ -41,6 +41,7 @@ export function Shell({ children, currentView, role, toast, onLogout, onNavigate
       </aside>
 
       {/* Mobile / Tablet Top Header */}
+      {/* Mobile / Tablet Top Header */}
       <header className="tablet-header">
         <button
           className="hamburger-button"
@@ -48,41 +49,35 @@ export function Shell({ children, currentView, role, toast, onLogout, onNavigate
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          <i className={`bi ${menuOpen ? 'bi-x-lg' : 'bi-list'}`} />
+          <i className="bi bi-list" />
         </button>
         <Brand compact />
       </header>
 
       {/* Mobile Drawer Overlay */}
-      {menuOpen && (
-        <div className="mobile-drawer-backdrop" onClick={() => setMenuOpen(false)}>
-          <div className="mobile-drawer" onClick={(e) => e.stopPropagation()}>
-            <div className="mobile-drawer-head">
-              <Brand />
-              <button
-                className="drawer-close-btn"
-                type="button"
-                aria-label="Fechar menu"
-                onClick={() => setMenuOpen(false)}
-              >
-                <i className="bi bi-x-lg" />
-              </button>
-            </div>
+      <div
+        className={`mobile-drawer-backdrop ${menuOpen ? 'is-open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden={!menuOpen}
+      >
+        <div className="mobile-drawer" onClick={(e) => e.stopPropagation()}>
+          <div className="mobile-drawer-head">
+            <Brand />
+          </div>
 
-            <div className="mobile-drawer-body">
-              <Nav currentView={currentView} onNavigate={handleNav} />
-            </div>
+          <div className="mobile-drawer-body">
+            <Nav currentView={currentView} onNavigate={handleNav} />
+          </div>
 
-            <div className="mobile-drawer-footer">
-              <RoleSelect roleId={role.id} onRoleChange={onRoleChange} />
-              <button className="logout-button" type="button" onClick={onLogout}>
-                <i className="bi bi-box-arrow-left" />
-                <span>Sair</span>
-              </button>
-            </div>
+          <div className="mobile-drawer-footer">
+            <RoleSelect roleId={role.id} onRoleChange={onRoleChange} />
+            <button className="logout-button" type="button" onClick={onLogout}>
+              <i className="bi bi-box-arrow-left" />
+              <span>Sair</span>
+            </button>
           </div>
         </div>
-      )}
+      </div>
 
       <main className="app-content">{children}</main>
 

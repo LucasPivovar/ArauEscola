@@ -1691,9 +1691,19 @@ img.auth-logo-img {
     position: fixed;
     inset: 0;
     z-index: 40;
-    background: rgba(15, 23, 42, 0.5);
-    backdrop-filter: blur(2px);
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(3px);
     display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.28s;
+  }
+
+  .mobile-drawer-backdrop.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .mobile-drawer {
@@ -1703,33 +1713,24 @@ img.auth-logo-img {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 20px 16px;
+    padding: 24px 16px 20px;
     box-shadow: var(--shadow-lg);
-    animation: slideIn 0.2s ease;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
 
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+  .mobile-drawer-backdrop.is-open .mobile-drawer {
+    transform: translateX(0);
   }
 
   .mobile-drawer-head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-  }
-
-  .drawer-close-btn {
-    border: 0;
-    background: transparent;
-    color: #ffffff;
-    font-size: 20px;
-    padding: 6px;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .mobile-drawer-body {
