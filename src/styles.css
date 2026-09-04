@@ -557,7 +557,7 @@ img.auth-logo-img {
 .app-content {
   width: 100%;
   max-width: 100%;
-  padding: 30px 36px 60px;
+  padding: 20px 36px 60px;
 }
 
 .toast-message {
@@ -1653,7 +1653,7 @@ img.auth-logo-img {
 
   .app-content {
     width: 100%;
-    padding: 30px 18px 74px;
+    padding: 20px 18px 74px;
   }
 
   .bottom-nav {
@@ -1800,7 +1800,7 @@ img.auth-logo-img {
   }
 
   .app-content {
-    padding: 30px 14px 70px;
+    padding: 20px 14px 70px;
   }
 
   .page-header,
