@@ -415,7 +415,7 @@ img.auth-logo-img {
 }
 
 .nav-brand {
-  padding: 24px 16px 22px;
+  padding: 0 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
