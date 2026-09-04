@@ -29,7 +29,6 @@ export function AuthScreen({ initialRole, onLogin, onRecover }: AuthScreenProps)
       <section className="auth-card" aria-label="Portal ClassConecta">
         <div className="brand-row auth-brand-centered">
           <img src="/classconecta-logo.png" alt="ClassConecta" className="auth-logo-img" />
-          <span className="auth-brand-subtitle">Gestão e Frequência Escolar</span>
         </div>
 
         <div className="auth-heading">
@@ -98,7 +97,6 @@ export function RecoverScreen({ onBack, onSubmit }: RecoverScreenProps) {
       <section className="auth-card compact" aria-label="Recuperação de senha">
         <div className="brand-row auth-brand-centered">
           <img src="/classconecta-logo.png" alt="ClassConecta" className="auth-logo-img" />
-          <span className="auth-brand-subtitle">Gestão e Frequência Escolar</span>
         </div>
         <div className="auth-heading">
           <h1>Recuperar senha</h1>
