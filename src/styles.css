@@ -415,7 +415,7 @@ img.auth-logo-img {
 }
 
 .nav-brand {
-  padding: 8px 12px 24px;
+  padding: 12px 14px 28px;
   display: flex;
   align-items: center;
 }
@@ -424,18 +424,32 @@ img.auth-logo-img {
   padding: 0;
 }
 
-.sidebar-wordmark-img {
-  height: 22px;
-  width: auto;
-  max-width: 170px;
-  object-fit: contain;
-  display: block;
-  filter: brightness(0) invert(1);
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  user-select: none;
+  white-space: nowrap;
 }
 
-.tablet-header .sidebar-wordmark-img {
-  height: 19px;
-  max-width: 145px;
+.brand-wordmark .wordmark-light {
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 0.92;
+}
+
+.brand-wordmark .wordmark-bold {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.tablet-header .brand-wordmark {
+  font-size: 17px;
+  letter-spacing: 0.14em;
 }
 
 .side-nav {

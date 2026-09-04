@@ -107,11 +107,10 @@ export function Shell({ children, currentView, role, toast, onLogout, onNavigate
 function Brand({ compact }: { compact?: boolean }) {
   return (
     <div className={`nav-brand ${compact ? 'compact' : ''}`}>
-      <img
-        src="/classconecta-wordmark.png"
-        alt="CLASSCONECTA"
-        className="sidebar-wordmark-img"
-      />
+      <span className="brand-wordmark" aria-label="ClassConecta">
+        <span className="wordmark-light">CLASS</span>
+        <span className="wordmark-bold">CONECTA</span>
+      </span>
     </div>
   );
 }
