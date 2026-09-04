@@ -108,9 +108,9 @@ function Brand({ compact }: { compact?: boolean }) {
   return (
     <div className={`nav-brand ${compact ? 'compact' : ''}`}>
       <img
-        src="/classconecta-wordmark-white.png"
-        alt="CLASSCONECTA"
-        className="sidebar-wordmark-img"
+        src="/classconecta-logo-white.png"
+        alt="ClassConecta"
+        className="sidebar-logo-img"
       />
     </div>
   );

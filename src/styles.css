@@ -415,8 +415,9 @@ img.auth-logo-img {
 }
 
 .nav-brand {
-  padding: 12px 14px 28px;
+  padding: 16px 14px 28px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -424,17 +425,18 @@ img.auth-logo-img {
   padding: 0;
 }
 
-.sidebar-wordmark-img {
-  height: 22px;
-  width: auto;
-  max-width: 175px;
+.sidebar-logo-img {
+  width: 135px;
+  max-width: 100%;
+  height: auto;
+  max-height: 68px;
   object-fit: contain;
   display: block;
 }
 
-.tablet-header .sidebar-wordmark-img {
-  height: 19px;
-  max-width: 150px;
+.tablet-header .sidebar-logo-img {
+  width: 105px;
+  max-height: 44px;
 }
 
 .side-nav {
