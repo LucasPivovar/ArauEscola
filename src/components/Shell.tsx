@@ -105,8 +105,20 @@ export function Shell({ children, currentView, role, toast, onLogout, onNavigate
 }
 
 function Brand({ compact }: { compact?: boolean }) {
+  if (compact) {
+    return (
+      <div className="nav-brand compact">
+        <img
+          src="/classconecta-horizontal-white.png"
+          alt="ClassConecta"
+          className="header-horizontal-logo"
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className={`nav-brand ${compact ? 'compact' : ''}`}>
+    <div className="nav-brand">
       <img
         src="/classconecta-logo-white.png"
         alt="ClassConecta"

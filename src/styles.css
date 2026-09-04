@@ -415,28 +415,35 @@ img.auth-logo-img {
 }
 
 .nav-brand {
-  padding: 16px 14px 28px;
+  padding: 24px 16px 22px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .nav-brand.compact {
   padding: 0;
+  justify-content: flex-start;
+  width: auto;
 }
 
 .sidebar-logo-img {
-  width: 135px;
+  width: 140px;
   max-width: 100%;
   height: auto;
-  max-height: 68px;
+  max-height: 72px;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
-.tablet-header .sidebar-logo-img {
-  width: 105px;
-  max-height: 44px;
+.header-horizontal-logo {
+  height: 28px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
 }
 
 .side-nav {
