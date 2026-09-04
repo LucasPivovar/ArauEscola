@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassConecta - Plataforma Inteligente de Frequência e Gestão Escolar</title>
+    <meta name="description" content="Plataforma única e moderna para gestão e controle de frequência escolar com 4 níveis de permissão: Diretor, Secretaria, Professor e Operador." />
+    <link rel="icon" type="image/png" href="/classconecta-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/landingpage/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="/landingpage" class="brand-link" aria-label="ClassConecta Início">
+          <img src="/classconecta-logo.png" alt="ClassConecta" class="brand-logo-img" />
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#recursos" class="nav-link">Recursos</a></li>
+            <li><a href="#perfis" class="nav-link">Os 4 Perfis</a></li>
+            <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+            <li><a href="#faq" class="nav-link">Perguntas Frequentes</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="/" class="btn btn-secondary">Acessar Plataforma</a>
+          <a href="#demo" class="btn btn-primary js-open-demo-modal">Pedir Demonstração</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="badge success">
+            <i class="bi bi-shield-check"></i>
+            Plataforma Unificada com 4 Níveis de Acesso
+          </div>
+          <h1 class="hero-title">
+            A gestão de frequência escolar que <span>conecta</span> toda a escola.
+          </h1>
+          <p class="hero-description">
+            Substitua listas manuais e processos lentos por uma plataforma inteligente em tempo real. Visão estratégica para a Direção, agilidade para a Secretaria e chamada em 30 segundos para os Professores.
+          </p>
+          <div class="hero-cta-group">
+            <a href="/" class="btn btn-primary">
+              <i class="bi bi-box-arrow-in-right"></i>
+              Entrar no Sistema
+            </a>
+            <button type="button" class="btn btn-secondary js-open-demo-modal">
+              <i class="bi bi-play-circle"></i>
+              Agendar Apresentação
+            </button>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-avatars">
+              <div class="proof-avatar">D</div>
+              <div class="proof-avatar">S</div>
+              <div class="proof-avatar">P</div>
+            </div>
+            <span>Usado diariamente por diretores, secretários e professores.</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mockup-window">
+            <div class="mockup-header">
+              <div class="mockup-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="mockup-title">ClassConecta • Painel Pedagógico</span>
+              <i class="bi bi-person-circle" style="opacity: 0.8;"></i>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-stats-row">
+                <div class="mockup-stat-card">
+                  <strong>96.4%</strong>
+                  <span>Presença Hoje</span>
+                </div>
+                <div class="mockup-stat-card">
+                  <strong style="color: var(--warning);">2</strong>
+                  <span>Atrasos</span>
+                </div>
+                <div class="mockup-stat-card">
+                  <strong style="color: var(--success);">18/18</strong>
+                  <span>Turmas Ativas</span>
+                </div>
+              </div>
+
+              <div class="mockup-class-card">
+                <div class="mockup-class-info">
+                  <div class="mockup-class-badge">6º A</div>
+                  <div>
+                    <h4>6º Ano A • Matemática</h4>
+                    <p>Prof. Lucas Silva • 30 alunos</p>
+                  </div>
+                </div>
+                <span class="mockup-pill-btn">Fazer chamada</span>
+              </div>
+
+              <div class="mockup-student-row">
+                <div class="mockup-student-info">
+                  <span class="status-dot green"></span>
+                  <span>Ana Beatriz Souza</span>
+                </div>
+                <span class="badge success" style="font-size: 11px; padding: 2px 8px;">Presente</span>
+              </div>
+
+              <div class="mockup-student-row">
+                <div class="mockup-student-info">
+                  <span class="status-dot red"></span>
+                  <span>Carlos Eduardo Lima</span>
+                </div>
+                <span class="badge" style="font-size: 11px; padding: 2px 8px; background: var(--danger-bg); color: var(--danger); border-color: rgba(239, 68, 68, 0.2);">Falta justificada</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-card card-1">
+            <div class="floating-icon">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+            <div class="floating-info">
+              <strong>Chamada em 30 segundos</strong>
+              <span>1 clique para toda a turma</span>
+            </div>
+          </div>
+
+          <div class="floating-card card-2">
+            <div class="floating-icon">
+              <i class="bi bi-file-earmark-spreadsheet"></i>
+            </div>
+            <div class="floating-info">
+              <strong>Importação Excel & CSV</strong>
+              <span>Sem digitação manual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <section class="metrics-section">
+      <div class="container metrics-grid">
+        <div class="metric-item">
+          <div class="metric-value">-85%</div>
+          <div class="metric-label">Tempo gasto em chamadas</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">100%</div>
+          <div class="metric-label">Digital e sem papel</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">4 Níveis</div>
+          <div class="metric-label">De permissões customizadas</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">Tempo Real</div>
+          <div class="metric-label">Notificações e relatórios</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roles Showcase Section -->
+    <section id="perfis" class="roles-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Perfis Especializados</div>
+          <h2>Uma única plataforma com o perfil exato para cada usuário</h2>
+          <p>Permissões inteligentes que mostram apenas as informações relevantes para cada profissional da instituição.</p>
+        </div>
+
+        <div class="role-tab-buttons">
+          <button class="role-tab-btn active" data-role="diretor">
+            <i class="bi bi-person-workspace"></i>
+            Diretor
+          </button>
+          <button class="role-tab-btn" data-role="secretaria">
+            <i class="bi bi-building"></i>
+            Secretaria
+          </button>
+          <button class="role-tab-btn" data-role="professor">
+            <i class="bi bi-mortarboard"></i>
+            Professor
+          </button>
+          <button class="role-tab-btn" data-role="operador">
+            <i class="bi bi-arrow-repeat"></i>
+            Operador / Substituto
+          </button>
+        </div>
+
+        <div class="role-card-display">
+          <div class="role-info">
+            <h3 id="role-title">👑 Visão Estratégica & Gestão Geral</h3>
+            <p id="role-description">O Diretor possui visão panorâmica e controle completo de todos os indicadores escolares em tempo real.</p>
+            <ul id="role-features" class="role-feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> Dashboard com taxa de presença global da escola</li>
+              <li><i class="bi bi-check-circle-fill"></i> Ranking de alunos que exigem atenção prioritária</li>
+              <li><i class="bi bi-check-circle-fill"></i> Comparativo de desempenho entre turmas e períodos</li>
+              <li><i class="bi bi-check-circle-fill"></i> Gestão de usuários da secretaria e equipe escolar</li>
+              <li><i class="bi bi-check-circle-fill"></i> Exportação unificada de relatórios gerenciais</li>
+            </ul>
+          </div>
+
+          <div class="role-preview-box">
+            <div id="role-preview-badge" class="preview-chip">Painel da Diretoria</div>
+            <div id="role-preview-items" class="preview-grid-items">
+              <div class="preview-item">
+                <span>Presença Média Geral</span>
+                <strong style="color: var(--primary);">94.2%</strong>
+              </div>
+              <div class="preview-item">
+                <span>Alunos em Atenção</span>
+                <strong>3 alunos</strong>
+              </div>
+              <div class="preview-item">
+                <span>Turmas Cadastradas</span>
+                <strong>18 turmas</strong>
+              </div>
+              <div class="preview-item">
+                <span>Professores Ativos</span>
+                <strong>24 professores</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Essential Features Section -->
+    <section id="recursos" class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Tecnologia & Facilidade</div>
+          <h2>Recursos pensados para o dia a dia da sala de aula</h2>
+          <p>Tudo o que a sua equipe precisa para eliminar atrasos e focar no aprendizado dos alunos.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="bi bi-ui-checks"></i>
+            </div>
+            <h3>Chamada Rápida em 1 Clique</h3>
+            <p>Marque presença, falta, atraso ou justificativa de forma intuitiva e veloz pelo celular ou computador.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="bi bi-journal-bookmark-fill"></i>
+            </div>
+            <h3>Linha do Tempo de Ocorrências</h3>
+            <p>Registre advertências, elogios e observações comportamentais com histórico cronológico individual.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="bi bi-file-earmark-arrow-up"></i>
+            </div>
+            <h3>Importação em Lote</h3>
+            <p>Cadastre centenas de alunos em segundos colando ou arrastando planilhas CSV e Excel diretamente no sistema.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <h3>Indicadores e Alertas</h3>
+            <p>Acompanhe gráficos de assiduidade e identifique antecipadamente padrões de evasão ou faltas frequentes.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <h3>Histórico & Edição Retroativa</h3>
+            <p>Acesse chamadas de qualquer data e realize ajustes autorizados com registro de auditoria completo.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3>100% Responsivo no Celular</h3>
+            <p>Interface leve com botões ergonômicos e floating labels projetados para uso ágil no smartphone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="como-funciona" class="steps-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Simples e Rápido</div>
+          <h2>Como funciona a ClassConecta na sua escola</h2>
+          <p>Implementação imediata sem complicações técnicas ou treinamentos extensos.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Cadastre as Turmas e Alunos</h3>
+            <p>A Secretaria importa a lista de alunos e vincula os professores às turmas em poucos minutos.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Realize a Chamada em Sala</h3>
+            <p>O Professor acessa apenas suas turmas no celular e registra a chamada em menos de 30 segundos.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Acompanhe Relatórios em Tempo Real</h3>
+            <p>A Diretoria e a Secretaria visualizam os dados consolidados, geram relatórios e notificam responsáveis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Tire suas Dúvidas</div>
+          <h2>Perguntas Frequentes</h2>
+          <p>Respostas rápidas para as dúvidas mais comuns sobre a plataforma.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item active">
+            <button class="faq-question" type="button">
+              <span>Como funciona a divisão dos 4 perfis de acesso?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>A ClassConecta disponibiliza permissões sob medida: o <strong>Diretor</strong> visualiza toda a escola e indicadores globais; a <strong>Secretaria</strong> cadastra turmas e importa alunos; o <strong>Professor</strong> vê apenas suas próprias aulas e faz a chamada; e o <strong>Operador</strong> tem acesso temporário para cobrir aulas de substituição.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>É possível importar os alunos via planilha Excel ou CSV?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sim! Na ficha da turma, a Secretaria pode clicar em "Importar em Lote", arrastar uma planilha CSV ou colar os dados diretamente no formato (Matrícula, Nome, Responsável, Telefone) para matricular centenas de alunos instantaneamente.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>A plataforma funciona no celular dos professores?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sim! A ClassConecta foi construída com foco Mobile-First. Toda a experiência de chamada, anotação de ocorrências e consulta de histórico é 100% responsiva e rápida em qualquer smartphone ou tablet, dispensando a instalação de aplicativos pesados.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Como a secretaria realiza alterações de chamadas passadas?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Na aba Consulta, a Secretaria pode selecionar qualquer registro do histórico e clicar em "Editar Chamada" para alterar presenças ou registrar atestados médicos retroativamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-text">
+            <h2>Pronto para modernizar a frequência na sua escola?</h2>
+            <p>Comece a utilizar a ClassConecta hoje mesmo e ganhe mais tempo para focar no que realmente importa: a educação.</p>
+          </div>
+          <div class="cta-buttons">
+            <a href="/" class="btn btn-primary">Acessar Plataforma</a>
+            <button type="button" class="btn btn-secondary js-open-demo-modal">Falar com Consultor</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="/classconecta-logo-white.png" alt="ClassConecta" class="sidebar-logo-img" />
+            <p>Plataforma inteligente de frequência e gestão escolar unificada para escolas modernas.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul class="footer-links">
+              <li><a href="#recursos">Recursos</a></li>
+              <li><a href="#perfis">Perfis</a></li>
+              <li><a href="#como-funciona">Como Funciona</a></li>
+              <li><a href="#faq">Perguntas Frequentes</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Acesso</h4>
+            <ul class="footer-links">
+              <li><a href="/">Login Direção</a></li>
+              <li><a href="/?perfil=secretaria">Login Secretaria</a></li>
+              <li><a href="/?perfil=professor">Login Professor</a></li>
+              <li><a href="/?perfil=operador">Login Operador</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:contato@classconecta.com.br">contato@classconecta.com.br</a></li>
+              <li><a href="tel:+5541999999999">(41) 99999-9999</a></li>
+              <li><span>Seg a Sex: 08h às 18h</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 ClassConecta. Todos os direitos reservados.</span>
+          <span>Plataforma de Gestão e Frequência Escolar</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Demo Modal -->
+    <div id="demo-modal" class="demo-modal-backdrop" aria-hidden="true">
+      <div class="demo-modal">
+        <button class="demo-modal-close" type="button" aria-label="Fechar modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <h3>Solicitar Demonstração</h3>
+        <p>Preencha os dados abaixo e nossa equipe entrará em contato para agendar uma apresentação gratuita.</p>
+
+        <form id="demo-form" class="demo-form">
+          <div class="form-group">
+            <label for="demo-name">Seu Nome</label>
+            <input id="demo-name" type="text" placeholder="Ex: Maria Silva" required />
+          </div>
+
+          <div class="form-group">
+            <label for="demo-school">Nome da Escola / Instituição</label>
+            <input id="demo-school" type="text" placeholder="Ex: Colégio Municipal de Araucária" required />
+          </div>
+
+          <div class="form-group">
+            <label for="demo-email">E-mail Institucional</label>
+            <input id="demo-email" type="email" placeholder="nome@escola.com.br" required />
+          </div>
+
+          <div class="form-group">
+            <label for="demo-role">Seu Cargo</label>
+            <select id="demo-role" required>
+              <option value="">Selecione...</option>
+              <option value="diretor">Diretor(a)</option>
+              <option value="secretario">Secretário(a) Escolar</option>
+              <option value="coordenador">Coordenador(a) Pedagógico(a)</option>
+              <option value="professor">Professor(a)</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 8px;">
+            Enviar Solicitação
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/landingpage/script.js"></script>
+  </body>
+</html>
