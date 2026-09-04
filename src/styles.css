@@ -117,10 +117,10 @@ button {
 
 .auth-logo-img,
 img.auth-logo-img {
-  width: 280px !important;
-  max-width: 90% !important;
+  width: 195px !important;
+  max-width: 80% !important;
   height: auto !important;
-  max-height: 120px !important;
+  max-height: 85px !important;
   object-fit: contain !important;
   display: block !important;
   margin: 0 auto !important;
@@ -1758,8 +1758,9 @@ img.auth-logo-img {
 
   .auth-logo-img,
   img.auth-logo-img {
-    width: 250px !important;
-    max-width: 85% !important;
+    width: 175px !important;
+    max-width: 75% !important;
+    max-height: 75px !important;
   }
 
   .brand-row strong {
