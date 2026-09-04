@@ -386,7 +386,7 @@ export const teachers: Teacher[] = [
   {
     id: 't1',
     name: 'Prof. Lucas Silva',
-    email: 'lucas.silva@araucaria.pr.gov.br',
+    email: 'lucas.silva@classconecta.com.br',
     subject: 'Matemática',
     classIds: ['6a', '7b', '8a'],
     status: 'active',
@@ -394,7 +394,7 @@ export const teachers: Teacher[] = [
   {
     id: 't2',
     name: 'Profa. Mariana Costa',
-    email: 'mariana.costa@araucaria.pr.gov.br',
+    email: 'mariana.costa@classconecta.com.br',
     subject: 'Língua Portuguesa',
     classIds: ['6a', '7b'],
     status: 'active',
@@ -402,7 +402,7 @@ export const teachers: Teacher[] = [
   {
     id: 't3',
     name: 'Prof. Roberto Ferreira',
-    email: 'roberto.ferreira@araucaria.pr.gov.br',
+    email: 'roberto.ferreira@classconecta.com.br',
     subject: 'História & Geografia',
     classIds: ['8a'],
     status: 'active',
@@ -410,7 +410,7 @@ export const teachers: Teacher[] = [
   {
     id: 't4',
     name: 'Profa. Juliana Andrade',
-    email: 'juliana.andrade@araucaria.pr.gov.br',
+    email: 'juliana.andrade@classconecta.com.br',
     subject: 'Ciências',
     classIds: [],
     status: 'inactive',
@@ -421,21 +421,21 @@ export const staffMembers: StaffMember[] = [
   {
     id: 's1',
     name: 'Ana Costa',
-    email: 'ana.costa@araucaria.pr.gov.br',
+    email: 'ana.costa@classconecta.com.br',
     roleTitle: 'Secretária Geral',
     department: 'Secretaria Acadêmica',
   },
   {
     id: 's2',
     name: 'Carlos Alberto Souza',
-    email: 'carlos.souza@araucaria.pr.gov.br',
+    email: 'carlos.souza@classconecta.com.br',
     roleTitle: 'Assistente Administrativo',
     department: 'Atendimento & Matrículas',
   },
   {
     id: 's3',
     name: 'Beatriz Ramos',
-    email: 'beatriz.ramos@araucaria.pr.gov.br',
+    email: 'beatriz.ramos@classconecta.com.br',
     roleTitle: 'Operadora de Registros',
     department: 'Documentação Escolar',
   },
@@ -445,7 +445,7 @@ export const operatorMembers: OperatorMember[] = [
   {
     id: 'op1',
     name: 'Rafael Lima',
-    email: 'rafael.lima@araucaria.pr.gov.br',
+    email: 'rafael.lima@classconecta.com.br',
     authorizedClassIds: ['6a', '7b'],
     accessType: 'Temporário',
     validUntil: '30/06/2024',
@@ -453,7 +453,7 @@ export const operatorMembers: OperatorMember[] = [
   {
     id: 'op2',
     name: 'Camila Nogueira',
-    email: 'camila.nogueira@araucaria.pr.gov.br',
+    email: 'camila.nogueira@classconecta.com.br',
     authorizedClassIds: ['8a'],
     accessType: 'Permanente',
   },

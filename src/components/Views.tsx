@@ -79,7 +79,7 @@ export function DashboardView({
             <i className="bi bi-calendar3" />
             Sexta-feira, 24 de Maio de 2024
           </span>
-          <h2>{isAdmin ? `Painel Arau Escola - ${role.label}` : 'Painel pedagógico'}</h2>
+          <h2>{isAdmin ? `Painel ClassConecta - ${role.label}` : 'Painel pedagógico'}</h2>
           <p>{role.description}</p>
         </div>
         <div className="role-panel-actions">

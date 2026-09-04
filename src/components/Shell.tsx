@@ -107,9 +107,9 @@ export function Shell({ children, currentView, role, toast, onLogout, onNavigate
 function Brand({ compact }: { compact?: boolean }) {
   return (
     <div className={`brand-row nav-brand ${compact ? 'compact' : ''}`}>
-      <img src="/assets/arau-icon.svg" alt="" />
+      <img src="/classconecta-icon.png" alt="ClassConecta Logo" className="brand-logo-img" />
       <div>
-        <strong>Arau Escola</strong>
+        <strong>ClassConecta</strong>
         <span>Gestão escolar</span>
       </div>
     </div>

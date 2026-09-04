@@ -11,7 +11,7 @@ type AuthScreenProps = {
 };
 
 export function AuthScreen({ initialRole, onLogin, onRecover }: AuthScreenProps) {
-  const [identifier, setIdentifier] = useState('lucas.silva@araucaria.pr.gov.br');
+  const [identifier, setIdentifier] = useState('lucas.silva@classconecta.com.br');
   const [password, setPassword] = useState('123456');
   const [error, setError] = useState('');
 
@@ -26,13 +26,10 @@ export function AuthScreen({ initialRole, onLogin, onRecover }: AuthScreenProps)
 
   return (
     <main className="auth-page">
-      <section className="auth-card" aria-label="Portal Arau Escola">
+      <section className="auth-card" aria-label="Portal ClassConecta">
         <div className="brand-row auth-brand-centered">
-          <img src="/assets/arau-icon.svg" alt="" />
-          <div>
-            <strong>Arau Escola</strong>
-            <span>Gestão escolar</span>
-          </div>
+          <img src="/classconecta-logo.png" alt="ClassConecta" className="auth-logo-img" />
+          <span className="auth-brand-subtitle">Gestão e Frequência Escolar</span>
         </div>
 
         <div className="auth-heading">
@@ -100,11 +97,8 @@ export function RecoverScreen({ onBack, onSubmit }: RecoverScreenProps) {
     <main className="auth-page">
       <section className="auth-card compact" aria-label="Recuperação de senha">
         <div className="brand-row auth-brand-centered">
-          <img src="/assets/arau-icon.svg" alt="" />
-          <div>
-            <strong>Arau Escola</strong>
-            <span>Gestão escolar</span>
-          </div>
+          <img src="/classconecta-logo.png" alt="ClassConecta" className="auth-logo-img" />
+          <span className="auth-brand-subtitle">Gestão e Frequência Escolar</span>
         </div>
         <div className="auth-heading">
           <h1>Recuperar senha</h1>

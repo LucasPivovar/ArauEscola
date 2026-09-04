@@ -28,7 +28,7 @@ function getInitialRole(): RoleId {
   if (typeof window === 'undefined') return 'professor';
   const params = new URLSearchParams(window.location.search);
   const fromUrl = params.get('perfil');
-  const stored = localStorage.getItem('arauRole');
+  const stored = localStorage.getItem('classconectaRole') || localStorage.getItem('arauRole');
 
   if (fromUrl && roles.some((role) => role.id === fromUrl)) return fromUrl as RoleId;
   if (stored && roles.some((role) => role.id === stored)) return stored as RoleId;
@@ -50,7 +50,7 @@ function getInitialAuth(): 'login' | 'recover' | 'app' {
   const params = new URLSearchParams(window.location.search);
   if (params.get('auth') === 'recover' || window.location.pathname.includes('esqueci-senha')) return 'recover';
   if (params.get('auth') === 'login') return 'login';
-  const stored = localStorage.getItem('arauAuthenticated');
+  const stored = localStorage.getItem('classconectaAuthenticated') || localStorage.getItem('arauAuthenticated');
   if (stored === 'false') return 'login';
   return 'app';
 }
@@ -138,8 +138,8 @@ export default function App() {
   }
 
   function handleLogin(nextRole: RoleId) {
-    localStorage.setItem('arauAuthenticated', 'true');
-    localStorage.setItem('arauRole', nextRole);
+    localStorage.setItem('classconectaAuthenticated', 'true');
+    localStorage.setItem('classconectaRole', nextRole);
     setRoleId(nextRole);
     setAuthView('app');
     setView('inicio');
@@ -147,7 +147,7 @@ export default function App() {
   }
 
   function handleRoleChange(nextRole: RoleId) {
-    localStorage.setItem('arauRole', nextRole);
+    localStorage.setItem('classconectaRole', nextRole);
     setRoleId(nextRole);
     updateAddress(view, nextRole);
   }
@@ -273,6 +273,7 @@ export default function App() {
         role={role}
         toast={toast}
         onLogout={() => {
+          localStorage.setItem('classconectaAuthenticated', 'false');
           localStorage.setItem('arauAuthenticated', 'false');
           setAuthView('login');
           window.history.pushState(null, '', '/');

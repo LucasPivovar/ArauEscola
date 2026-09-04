@@ -1,20 +1,19 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
-  title: 'Arau Escola - Plataforma',
-  description: 'Plataforma única para frequência escolar com permissões por perfil.',
+  title: 'ClassConecta - Plataforma de Frequência Escolar',
+  description: 'Plataforma única para frequência e gestão escolar com permissões por perfil.',
+  icons: {
+    icon: '/classconecta-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -25,14 +24,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/assets/arau-icon.svg" />
+        <link rel="icon" type="image/png" href="/classconecta-icon.png" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} antialiased`}>
         {children}
       </body>
     </html>
   );
 }
+
