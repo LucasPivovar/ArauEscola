@@ -1601,23 +1601,48 @@ img.auth-logo-img {
     position: fixed;
     inset: 0 0 auto;
     z-index: 30;
+    height: 60px;
     min-height: 60px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 14px;
-    padding: 8px 16px;
+    justify-content: center;
+    padding: 0 16px;
     background: var(--navy);
     color: #ffffff;
     box-shadow: var(--shadow-md);
   }
 
-  .tablet-header .brand-row strong {
+  .tablet-header .hamburger-button {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
     color: #ffffff;
+    font-size: 24px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
   }
 
-  .tablet-header .brand-row span {
-    display: none;
+  .tablet-header .nav-brand.compact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .tablet-header .header-horizontal-logo {
+    height: 28px;
+    width: auto;
+    max-width: 175px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 
   .header-role {
